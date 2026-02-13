@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Bé Iu Của Anh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff4d6d;
+            --soft-pink: #ffafbd;
+            --bg-grad: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-grad);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Hiệu ứng trái tim bay */
+        .heart {
+            position: absolute;
+            color: white;
+            opacity: 0.6;
+            animation: float 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 45px 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            z-index: 10;
+            border: 2px solid #fff;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-height: 60px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #yes {
+            background: var(--primary-red);
+            color: white;
+            box-shadow: 0 8px 15px rgba(255, 77, 109, 0.3);
+        }
+
+        #yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.4);
+        }
+
+        #no {
+            background: #f0f0f0;
+            color: #888;
+            border: 1px solid #ddd;
+        }
+
+        /* Màn hình bức thư */
+        #letter-screen {
+            display: none;
+            animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .paper {
+            background: #fff;
+            padding: 35px;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.8;
+            color: #333;
+            border-left: 6px solid var(--primary-red);
+            font-size: 1.05rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .paper h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-red);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .paper p {
+            margin-bottom: 15px;
+            white-space: pre-line; /* Để xuống dòng đúng như văn bản bạn gửi */
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="question-card">
+        <h1>Bé iu có đồng ý làm Valentine của anh không nè? ❤️</h1>
+        <div class="btn-group">
+            <button class="btn" id="yes">Dạ cóoo ❤️</button>
+            <button class="btn" id="no">Hônggg 🙄</button>
+        </div>
+    </div>
+
+    <div class="container" id="letter-screen">
+        <div class="paper">
+            <h2>Gửi bé iu của anh,</h2>
+            <p>Chắc bé cũng biết hôm nay là ngày gì rùi đúng k, nếu như bé ở cố định một chỗ thui thì chắc hôm ni bé có quà cầm trên tay r. 
+            
+            Xui cái valentine năm nay lại vào dịp cận tết thế này thì a chỉ viết một lá thư chúc mừng nho nhỏ này cho bé hoyy. 
+
+            Nhân dịp ngày Quốc Tế Tình Nhân, a chúc bé hôm nay phải vui vẻ hơn thường ngày, ăn thật no và cười thiệt là nhiều. A cũng chưa biết nên viết gì nên chắc là a hi vọng năm sau mình có thể đón Valentine cùng nhau thay vì online như thế này nhé. 
+
+            A đang phân vân nó nên tặng thêm cái gì không chứ gửi mỗi cái thư thì phèn quá. Nhưng nếu có mỗi cái thư thôi thì bé iu thông cảm nhoa, ra Tết a sẽ tặng bé bù hen. 
+
+            Anh yêu bé nhiều.</p>
+            
+            <p style="text-align: right; font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--primary-red); margin-top: 30px;">
+                Yêu bé rất nhiều!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Hiệu ứng trái tim rơi
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 300);
+
+        const noBtn = document.getElementById('no');
+        const yesBtn = document.getElementById('yes');
+        const card = document.getElementById('question-card');
+        const letter = document.getElementById('letter-screen');
+
+        // Nút No chạy trốn (Fix cứng để không bị đè layout)
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.zIndex = '999';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+
+        // Chuyển sang bức thư
+        yesBtn.addEventListener('click', () => {
+            card.classList.add('hidden');
+            letter.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
