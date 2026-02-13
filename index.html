@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gửi Bé Iu Của Anh</title>
+    <title>Quà Tặng Bé Iu</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -123,7 +123,7 @@
 
         .paper p {
             margin-bottom: 15px;
-            white-space: pre-line; /* Để xuống dòng đúng như văn bản bạn gửi */
+            white-space: pre-line;
         }
 
         @keyframes slideUp {
@@ -137,10 +137,10 @@
 <body>
 
     <div class="container" id="question-card">
-        <h1>Bé iu có đồng ý làm Valentine của anh không nè? ❤️</h1>
+        <h1>Tôi ra lệnh cho cô trở thành Valentine của tôi!? ❤️</h1>
         <div class="btn-group">
-            <button class="btn" id="yes">Dạ cóoo ❤️</button>
-            <button class="btn" id="no">Hônggg 🙄</button>
+            <button class="btn" id="yes">Dạ cóaaa Tổng Tài 😘</button>
+            <button class="btn" id="no">Hônggg chịuuu đâu 😣</button>
         </div>
     </div>
 
@@ -164,25 +164,34 @@
     </div>
 
     <script>
-        // Hiệu ứng trái tim rơi
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '❤️';
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
+        // Hàm tạo vật rơi (Trái tim và Tiền)
+        function createFallingItem() {
+            const items = ['❤️', '💵', '💸', '💰', '✨']; 
+            const item = document.createElement('div');
+            
+            item.innerHTML = items[Math.floor(Math.random() * items.length)];
+            
+            item.classList.add('heart'); 
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.fontSize = Math.random() * 20 + 15 + 'px'; 
+            item.style.animationDuration = Math.random() * 3 + 2 + 's'; 
+            item.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            document.body.appendChild(item);
+
+            setTimeout(() => {
+                item.remove();
+            }, 5000);
         }
-        setInterval(createHeart, 300);
+
+        setInterval(createFallingItem, 200);
 
         const noBtn = document.getElementById('no');
         const yesBtn = document.getElementById('yes');
         const card = document.getElementById('question-card');
         const letter = document.getElementById('letter-screen');
 
-        // Nút No chạy trốn (Fix cứng để không bị đè layout)
+        // Nút No chạy trốn
         noBtn.addEventListener('mouseover', () => {
             const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
             const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -193,7 +202,7 @@
             noBtn.style.top = y + 'px';
         });
 
-        // Chuyển sang bức thư
+        // Chuyển sang bức thư khi bấm "Dạ cóoo"
         yesBtn.addEventListener('click', () => {
             card.classList.add('hidden');
             letter.style.display = 'block';
